@@ -1,0 +1,26 @@
+	       _________________________
+	      |			       |
+	      |			       |
+	      |	  KABIN PRO, Roadmap   |
+	]-----|	  (par levilliard)     |----[
+	      | 		       |
+	      |________________________|
+
+1.--------[Mars 2019]
+	Preparation et ouvertures aux autres developpeurs sur GitHub
+
+2.--------[Avril]
+	L'integration du module de paiement
+
+3.--------[Mai, Juin]
+	Similation du logiciel dans des cabinets d'avocats
+
+4.--------[Juillet]
+	Finalisation de l'application mobile
+
+5.--------[Aout]
+	Deploiement sur Linux, Windows et Mac OS
+
+
+___________
+ Jan 2019
