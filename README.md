@@ -24,7 +24,6 @@ Le logiciel peut être aussi déployé sur un seul ordinateur.
 [Voir les captures d'ecran](https://github.com/wangol509/Kabin/tree/master/screenshot)
 
 ![Deploiment](/images/deploy.png?raw=true)
-
 Il est possible d&#39;utiliser le projet dans un réseau local, mais les codes sources du serveur et la base de données ne sont pas dans le dépôt. Si vous contez l&#39;utiliser immédiatement, veuillez me contacter par email (en bas), en attendant que je fais les mises à jour.
 
 # 2. Installation
@@ -63,7 +62,7 @@ Pour ceux qui veulent faire des dons, voici mes comptes Bitcoin et Ethereum:
 
 Vous pouvez verifier les  balances [Bitcoin](https://www.blockchain.com/btc/address/17tPeK7gHjS114R3pGqS7UB6979N9NTbVa) et [Ethereum](https://enjinx.io/eth/address/0x928e7e4d5dF5DB0253845aD3F0C4F75BcfEeAC22/transactions)
 
-Pour l&#39;instant je n&#39;ai pas d&#39;autre moyen de recevoir des paiements, mais si vos désires vous tentent, … me contacter alors (l'email est en bas)!
+Pour l&#39;instant je n&#39;ai pas d&#39;autre moyen de recevoir des paiements en ligne, mais si vos désires vous tentent, … me contacter alors (l'email est en bas)!
 
 L&#39;utilisation du projet est gratuit, mais si vous voulez le commercialiser vous devez me contacter.
 
