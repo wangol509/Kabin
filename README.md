@@ -41,7 +41,7 @@ Pour commencer à code ou à utiliser le logiciel vous devez configurer votre en
 - Ionic 3, Cordova
 - Postman (optionnel)
 
-Dans le répertoire racine, le dessier _kabin\_desktop_est l&#39;application client Angular et _kabin\_pro_est le serveur.
+Dans le répertoire racine, le dessier ```kabin_desktop``` est l&#39;application client Angular et ```kabin_pro``` est le serveur.
 
 La structure globale du projet est représentée par la figure suivante:
 
