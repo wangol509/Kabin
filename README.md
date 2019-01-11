@@ -1,18 +1,25 @@
+
+<center> <h1>KABIN PRO</h1> </center>
+
+<p align="center"> 
+  <img src="/kabin_desktop/src/assets/logo.png">
+</p>
+
 #
 # 1. Présentation
 
 Kabin est un logiciel de gestion de cabinets d&#39;avocats et départements juridiques adaptés au système judiciaire Haïtien. Le logiciel est composé de plusieurs modules :
 
 - Utilisateurs
-- Affaires,
-- Audiences,
+- Affaires
+- Audiences
 - Pièces des dossiers
 - Paiement
 - Clients
 
 Le système (le logiciel) est construit pour être déployé sur une architecture répartie, une partie du système est destinée aux administrateurs (une application de bureau) et une autre partie (Une application mobile) est destinée à des groupes d&#39;utilisateurs qui seront éventuellement les clients du cabinet. L&#39;application mobile est utilisé pour permettre aux clients de suivre l&#39;évolution de leurs dossiers ou des affaires que les concernent.
 
-Le logiciel peut déployer sur un ou plusieurs ordinateurs.
+Le logiciel peut être aussi déployer sur un seul ordinateur.
 
 [Voir les captures d'ecran](https://github.com/wangol509/Kabin/tree/master/screenshot)
 
