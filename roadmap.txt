@@ -13,7 +13,7 @@
 	L'integration du module de paiement
 
 3.--------[Mai, Juin]
-	Similation du logiciel dans des cabinets d'avocats
+	Simulation du logiciel dans des cabinets d'avocats
 
 4.--------[Juillet]
 	Finalisation de l'application mobile
