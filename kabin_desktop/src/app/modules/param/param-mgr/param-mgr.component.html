@@ -1,0 +1,21 @@
+<div style="margin-left: 30px; margin-right: 20px;">
+  <mat-tab-group>
+    <mat-tab label="INSTITUTION">
+      <app-institution> </app-institution>
+    </mat-tab>
+
+    <!--mat-tab label="MODE DE PAIEMENT"> 
+      <payment-periode></payment-periode>
+    </mat-tab-->
+    <mat-tab label="SYSTEME">
+      <div class="para-container">
+        <mat-form-field>
+          <input matInput placeholder="Server URL" [formControl]="uri" required>
+          <mat-error *ngIf="uri.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-raised-button color="warn" (click)="setUrl()">Valider</button>
+
+    </mat-tab>
+  </mat-tab-group>
+</div>

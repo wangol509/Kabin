@@ -1,0 +1,155 @@
+<div>
+	<label style="background: #263238; padding: 10px; color: #fff;"> Mise a jour </label>
+	<hr>
+</div>
+
+<div>
+	<form [formGroup]="EmployeeForm" class="m_form" (ngSubmit)="validateEmployee()">
+		<table>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td class="iheader">Infomations {{etype}}</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput placeholder="Prénom" formControlName="employeeLastname" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput placeholder="Nom" formControlName="employeeFirstname" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput placeholder="Fonction/Titre" formControlName="employeeFunction" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput placeholder="CIN ou NIF" formControlName="employeeCardId" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput readonly min="1910-12-31" max="2008-12-31" [matDatepicker]="picker" placeholder="Date de Naiss"
+									 formControlName="employeeBirthday">
+									<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+									<mat-datepicker #picker startView="year"></mat-datepicker>
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-select id="employeeSex" placeholder="Sex" formControlName="employeeSex">
+									<mat-option value="M">M</mat-option>
+									<mat-option value="F">F</mat-option>
+								</mat-select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput type="tel" placeholder="Téléphone" formControlName="employeeTels" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput type="email" placeholder="Email" formControlName="employeeEmail" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<mat-input-container>
+									<input matInput type="text" placeholder="Détails" formControlName="employeeDetails" size="20">
+								</mat-input-container>
+							</td>
+						</tr>
+					</table>
+				</td>
+
+				<td>
+					<div style="width: 80px;"> </div>
+				</td>
+				<!--addr -->
+				<td>
+			<tr>
+				<td class="iheader">Adresse</td>
+			</tr>
+			<tr>
+				<td>
+					<mat-input-container>
+						<input matInput placeholder="Pays" formControlName="sAddressCountry" size="20">
+					</mat-input-container>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<mat-input-container>
+						<input matInput placeholder="Departement" formControlName="sAddressState" size="20">
+					</mat-input-container>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<mat-input-container>
+						<input matInput placeholder="Ville" formControlName="sAddressCity" size="20">
+					</mat-input-container>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<mat-input-container>
+						<input matInput placeholder="Rue" formControlName="sAddressStreet" size="15">
+					</mat-input-container>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<mat-input-container>
+						<input matInput placeholder="Détails" formControlName="sAddressDetails" size="15">
+					</mat-input-container>
+				</td>
+			</tr>
+			</td>
+			<td>
+				<tr>
+					<td class="iheader">Salaire</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-input-container>
+							<input matInput placeholder="Salaire Mensuel" formControlName="employeeSalaryValue" size="20">
+						</mat-input-container>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<mat-input-container>
+							<input matInput placeholder="Période (Nbr de Mois)" formControlName="employeeSalaryPaymentFreq" size="20">
+						</mat-input-container>
+					</td>
+				</tr>
+			</td>
+			</tr>
+		</table>
+		<div class="row" style="margin-top: 40px;">
+			<button type="submit" mat-raised-button color="warn" [disabled]="!EmployeeForm.valid">Valider</button>
+			<button type="button" mat-raised-button color="warn" (click)="closeWindow()">Annuler</button>
+		</div>
+	</form>
+</div>

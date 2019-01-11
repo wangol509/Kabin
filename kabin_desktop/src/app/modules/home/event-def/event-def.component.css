@@ -1,0 +1,34 @@
+
+.cardevt{
+	margin: 20px;
+	padding: 20px;
+	background: rgb(143, 221, 245) !important;
+}
+
+table.test td {
+    padding: 12px;
+    border:2px solid #fff;border-collapse:separate;
+}
+.hdr{
+	background: #eee;
+	padding: 5px;
+    text-transform: uppercase;
+}
+
+.evt{
+	background-color: #eee;
+	margin: auto 10px !important;
+}
+
+.micon{
+	color: #f00;
+	font-size: 15px;
+}
+
+.fcol{
+	width: 300px !important;
+}
+
+mat-input-container{
+	width: 100%;
+}

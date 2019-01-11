@@ -1,0 +1,25 @@
+.card{
+	margin: 20px 0;
+    padding: 20px 0;
+	width: 250px;
+}
+
+.card1{
+	margin: 20px;
+    padding: 20px;
+	width: 150px;
+}
+
+table.test td {
+    padding: 12px;
+    border:2px solid #fff;border-collapse:separate;
+}
+.hdr{
+	background: #eee;
+	padding: 5px;
+    text-transform: uppercase;
+}
+
+.btns{
+	width: 240px;
+}

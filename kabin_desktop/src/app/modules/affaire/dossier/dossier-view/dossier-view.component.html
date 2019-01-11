@@ -1,0 +1,14 @@
+<div>
+    <mat-grid-list cols="4">
+        <mat-grid-tile *ngFor="let f of folders">
+            <mat-card>
+                <p>
+                    <img src="assets/img/icon/folder.jpg" width="100" />
+                </p>
+                <p>
+                    {{f.folderDesc}}
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

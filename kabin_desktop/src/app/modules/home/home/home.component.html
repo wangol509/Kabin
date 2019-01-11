@@ -1,0 +1,122 @@
+<mat-toolbar class="m-header app1">KABI'N
+  <span style="margin-left: 20px; font-size: 15px; color: #aaa; text-transform: uppercase">
+    {{inst.institutionName}}
+  </span>
+  <span class="spacer"></span>
+  <button mat-icon-button matTooltip="Envoyer Message" (click)="openDialog('message')">
+    <mat-icon>message</mat-icon>
+  </button>
+
+  <button mat-icon-button matTooltip="Aides" (click)="openDialog('help')">
+    <mat-icon>help</mat-icon>
+  </button>
+
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>language</mat-icon>
+      <span>
+        <a href="wwww.obliqsystem.com">KABIN</a>
+      </span>
+    </button>
+
+    <button mat-menu-item>
+      <mat-icon>screen_share</mat-icon>
+      <span>
+        <a>Partager</a>
+      </span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<mat-sidenav-container class="m-container">
+  <mat-sidenav #sidenav #start mode="side" opened="true" class="m-sidenav">
+
+    <div class="wrap">
+      <div class="menu1">
+        <!-- header -->
+        <mat-grid-list cols="3" rowHeight="1:1">
+          <mat-grid-tile [colspan]="1" class="curs" routerLink="/home">
+            <img src="assets/logo.png" width="53" height="50">
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" class="gcel" routerLink="/home"> DASHBORD</mat-grid-tile>
+        </mat-grid-list>
+
+        <div style="height: 1px"></div>
+        <mat-grid-list cols="3" rowHeight="50px">
+
+          <!-- affaires -->
+          <mat-grid-tile [colspan]="1" class="curs gcel" [routerLink]="['/home', {outlets: {'home': ['aff']}}]">
+            <img src="assets/img/icon/aff.png" width="30" height="30">
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" class="gcel curs" [routerLink]="['/home', {outlets: {'home': ['aff']}}]">
+            <div class="textl"> Affaires </div>
+          </mat-grid-tile>
+
+
+          <!-- admin -->
+          <mat-grid-tile [colspan]="1" class="curs gcel" [routerLink]="['/home', {outlets: {'home': ['emp']}}]">
+            <img src="assets/img/icon/adm.png" width="30" height="30">
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" class="gcel curs" [routerLink]="['/home', {outlets: {'home': ['emp']}}]">
+            <div class="textl"> Admin </div>
+          </mat-grid-tile>
+
+          <!-- user -->
+          <!-- <mat-grid-tile [colspan]="1" class="curs gcel" [routerLink]="['/home', {outlets: {'home': ['usr']}}]">
+              <img src="assets/img/icon/user.png" width="30" height="30">
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" class="curs gcel" [routerLink]="['/home', {outlets: {'home': ['usr']}}]"> <div class="textl"> Utilisateurs </div> </mat-grid-tile> -->
+
+          <!-- init -->
+          <mat-grid-tile [colspan]="1" class="curs gcel" [routerLink]="['/home', {outlets: {'home': ['param']}}]">
+            <img src="assets/img/icon/param.png" width="30" height="30">
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" class="curs gcel" [routerLink]="['/home', {outlets: {'home': ['param']}}]">
+            <div class="textl"> Param. Init. </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </div>
+
+      <div style="height: 1px; background-color: #fff;"></div>
+      <div style="height: 30px;"></div>
+      <div style="height: 1px; background-color: #fff;"></div>
+      <!-- <div style="height: 100px; background-color: #eee;"></div>
+      <div style="height: 1px; background-color: #fff;"></div> -->
+
+      <div class="user">
+        <p>
+          <img src="assets/img/user.png" width="100" height="100"><br />
+          {{user.userUsername}}
+        </p>
+        <button matTooltip="Se deconnecter" mat-button color="warn" routerLink="/login"><img src="assets/img/icon/disconn.png"
+            width="30" height="30"></button>
+        <div style="height: 1px; background-color: #fff;"></div>
+      </div>
+
+    </div>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="m-contain">
+    <div class="app2" style="height: 5px;">
+      <br />
+    </div>
+
+    <router-outlet name="home"></router-outlet>
+    <router-outlet name="std"></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-toolbar class="m-footer"> &copy; 2018 </mat-toolbar>

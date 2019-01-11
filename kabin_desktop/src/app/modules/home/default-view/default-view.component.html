@@ -1,0 +1,67 @@
+<!-- <mat-grid-list cols="3" rowHeight="280px">
+        <mat-grid-tile>
+          <mat-card class="card3">
+              <img src="assets/img/icon/student.png" width="60" height="60">
+            <hr>
+            <div class="item">
+            <h1>{{count.stdCounter}}</h1>
+                El&#232;ves
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+
+       <mat-grid-tile>
+          <mat-card class="card2">
+              <img src="assets/img/icon/teacher1.png" width="60" height="60">
+            <hr>
+            <div class="item">
+                <h1>{{count.tchCounter}}</h1>
+                Professeurs   
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+
+       <mat-grid-tile>
+          <mat-card class="card1">
+              <img src="assets/img/icon/smalls.png" width="60" height="60">
+            <hr>
+            <div class="item">
+                <h1>{{count.empCounter}}</h1>
+                Employ&#233;s
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list> -->
+
+<div>
+    <mat-grid-list cols="3" rowHeight="400px">
+        <mat-grid-tile>
+            <mat-card style="background: rgb(86, 218, 211)">
+                <div style="font-size: 20px; text-align: center; width: 200px">
+                    <p>{{affs}}</p>
+                    <p>AFFAIRES</p>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card style="background: rgb(216, 218, 86)">
+                <div style="font-size: 20px; width: 100%; text-align: center;  width: 200px">
+                    <p>{{clients}}</p>
+                    <p>CLIENTS</p>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card style="background: rgb(218, 86, 174)">
+                <div style="font-size: 20px; text-align: center; width: 200px;">
+                    <p>{{doss}}</p>
+                    <p>DOSSIERS</p>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<hr>
+<event-def></event-def>

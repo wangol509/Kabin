@@ -1,0 +1,69 @@
+<div class="mat-elevation-z8">
+  <div style="margin-left: 10px">
+    <mat-form-field floatPlaceholder="never">
+      <input matInput #filter placeholder="Recherche">
+    </mat-form-field>
+
+    <button mat-button color="warn" (click)="fetchData()">
+      <i class="material-icons">refresh</i>
+    </button>
+  </div>
+
+
+  <mat-table #table [dataSource]="dataSource">
+    <!-- ID Column -->
+    <ng-container matColumnDef="Code">
+      <mat-header-cell *matHeaderCellDef> Code </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientId}} </mat-cell>
+    </ng-container>
+
+    <!-- fName Column -->
+    <ng-container matColumnDef="Nom">
+      <mat-header-cell *matHeaderCellDef> Nom </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientLastname}} </mat-cell>
+    </ng-container>
+
+    <!-- lName Column -->
+    <ng-container matColumnDef="Prenom">
+      <mat-header-cell *matHeaderCellDef> Prénom </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientFirstname}} </mat-cell>
+    </ng-container>
+
+    <!-- Function Column -->
+    <ng-container matColumnDef="Fonction">
+      <mat-header-cell *matHeaderCellDef> Fonction/Titre </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientFunction}} </mat-cell>
+    </ng-container>
+
+    <!-- Tel Column -->
+    <ng-container matColumnDef="Tels">
+      <mat-header-cell *matHeaderCellDef> Tel </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientTels}} </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="Email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientEmail}} </mat-cell>
+    </ng-container>
+
+    <!-- Sex Column -->
+    <ng-container matColumnDef="Sex">
+      <mat-header-cell *matHeaderCellDef> Sex </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.clientSex}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="Details">
+      <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> <button mat-button color="warn" (click)="openDetailsDialog(row)">Détails</button></mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="Update">
+      <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> <button mat-button color="warn" (click)="openUpdateDialog(row)">Update</button></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

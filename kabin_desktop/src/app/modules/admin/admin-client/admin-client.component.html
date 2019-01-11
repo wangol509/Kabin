@@ -1,0 +1,103 @@
+<mat-sidenav-container class="m-std">
+    <mat-sidenav #sidenav #start mode="side" opened="true" class="std-sidenav">
+
+        <div class="wrap">
+            <div class="">
+                <!-- header -->
+
+                <div style="height: 1px"></div>
+                <mat-grid-list cols="1" rowHeight="75px">
+
+                    <mat-grid-tile [colspan]="1" class="tit m-grid gcel"> Admin </mat-grid-tile>
+
+                    <!-- home -->
+                    <mat-grid-tile [colspan]="1" class="m-grid gcel" height="30" [routerLink]="['/home', {outlets: {'home': ['emp_home']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/home.png" width="30">
+                            <p class="h8">Acceuil</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!-- mgr -->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid" [routerLink]="['/home', {outlets: {'home': ['emp_mgr']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/emp.png" width="30" height="30">
+                            <p class="h8">Gest. Emp.</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!--client mgr-->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid current-std" [routerLink]="['/home', {outlets: {'home': ['client_mgr']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/client.png" width="30" height="30">
+                            <p class="h8">Clients</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!-- pay -->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid" [routerLink]="['/home', {outlets: {'home': ['emp_pay']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/pay.png" width="30" height="30">
+                            <p class="h8">Gest. Paie</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!--user mgr-->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid" [routerLink]="['/home', {outlets: {'home': ['usr']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/user.png" width="30" height="30">
+                            <p class="h8">Gest. Utils.</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!--user mgr-->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid" [routerLink]="['/home', {outlets: {'home': ['contact_mgr']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/contact.png" width="30" height="30">
+                            <p class="h8">Contacts</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!-- report>
+                <mat-grid-tile [colspan]="1" class="curs m-grid">
+                    <img src="assets/img/icon/report.png" width="30" height="30" [routerLink]="['/home', {outlets: {'home': ['emp_report']}}]">
+                </mat-grid-tile-->
+                    <mat-grid-tile>
+
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="std-contain">
+        <router-outlet name="home"></router-outlet>
+        <mat-tab-group>
+            <mat-tab label="CLIENTS" (click)="goToRefresh()">
+                <div style="margin-left: 30px; margin-right: 20px;">
+                    <br />
+                    <client-view></client-view>
+                </div>
+            </mat-tab>
+            <mat-tab label="AJOUTER">
+                <div style="margin-left: 30px; margin-right: 20px;">
+                    <br />
+                    <client-add></client-add>
+                </div>
+            </mat-tab>
+            <mat-tab label="SUPPRIMER">
+                <div style="margin-left: 30px; margin-right: 20px;">
+                    <br />
+                    <client-delete></client-delete>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-sidenav-content>
+</mat-sidenav-container>

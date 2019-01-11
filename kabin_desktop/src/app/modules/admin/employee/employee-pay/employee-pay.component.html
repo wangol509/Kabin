@@ -1,0 +1,96 @@
+<mat-tab-group>
+  <mat-tab label="Paiement Employé">
+    <div class="mat-elevation-z8">
+
+      <mat-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="Nom">
+          <mat-header-cell *matHeaderCellDef> Employé </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.employeeLastname[0] + ". " + row.employeeFirstname}} </mat-cell>
+        </ng-container>
+
+        <!-- Progress Column -->
+        <ng-container matColumnDef="Funct">
+          <mat-header-cell *matHeaderCellDef>Fonction</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.employeeFunction}}</mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Montant">
+          <mat-header-cell *matHeaderCellDef> Montant Annuel</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.employeeAnnualPayment}}HTG </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="Balance">
+          <mat-header-cell *matHeaderCellDef> Balance actuelle </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.employeeAnnualPayment - row.totalEmployeePayment}}HTG </mat-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <!--ng-container matColumnDef="Status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let row"> Paye </mat-cell>
+      </ng-container-->
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="Date">
+          <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.dateCreated}} </mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="Details">
+          <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+          <mat-cell *cdkCellDef="let row"> <button mat-button color="accent" (click)="openDetailsDialog(row)">Details</button></mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="Paye">
+          <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+          <mat-cell *cdkCellDef="let row"> <button mat-button color="accent" (click)="openPayDialog(row)">Paye</button></mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="Historique">
+          <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+          <mat-cell *cdkCellDef="let row"> <button mat-button color="accent" (click)="openHistoriqueDialog(row)">Historique</button></mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+
+      <mat-paginator #paginator [length]="stdDatabase.data.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+    </div>
+  </mat-tab>
+  <mat-tab label="Rapports">
+
+    <table>
+      <tr>
+        <td>
+          <mat-input-container floatPlaceholder="never">
+            <input matInput #filter placeholder="Nom">
+          </mat-input-container>
+        </td>
+
+        <td>
+          <label style="margin: 2px;">Filtrer par date:</label>
+        </td>
+        <td>
+          <mat-input-container>
+            <input matInput type="date" size="15" placeholder="Date debut">
+          </mat-input-container>
+        </td>
+
+        <td>
+          <mat-input-container>
+            <input matInput type="date" size="15" placeholder="Date fin">
+          </mat-input-container>
+        </td>
+      </tr>
+    </table>
+  </mat-tab>
+</mat-tab-group>

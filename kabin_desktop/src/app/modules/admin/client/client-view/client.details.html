@@ -1,0 +1,165 @@
+<div>
+	<label style="background: #263238; padding: 10px; color: #fff;"> Informations {{etype}}</label>
+	<button mat-raised-button color="warn" (click)="printTch()">Imprimer</button>
+</div>
+
+<div id="print-section">
+
+	<div style="margin: 40px; font-size: 20px;">
+
+	</div>
+
+	<div>
+
+		<table>
+			<tr>
+				<!-- info emp -->
+				<td>
+					<div class="iheader">{{etype}}</div>
+				</td>
+
+				<td style="width: 40px">
+					&nbsp;
+				</td>
+
+				<!-- info addresse -->
+				<td>
+					<div class="iheader">Adresse</div>
+				</td>
+
+
+				<td style="width: 40px">
+					&nbsp;
+				</td>
+
+				<td>
+					<div class="iheader">Salaire</div>
+				</td>
+			</tr>
+
+			<tr>
+				<!-- prof -->
+				<td class="tdd">
+					<table>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Nom: </label>
+									{{emp.clientLastname}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Prenom: </label>
+									{{emp.clientFirstname}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Fonction: </label>
+									{{emp.clientFunction}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>CIN ou NIF: </label>
+									{{emp.clientCardId}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Sex: </label>
+									{{emp.clientSex}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Telephone: </label>
+									{{emp.clientTels}}
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Email: </label>
+									{{emp.clientEmail}}
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Details: </label>
+									{{emp.clientDetails}}
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					&nbsp;
+				</td>
+				<!-- addr -->
+				<td class="tdd">
+					<table>
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Pays:</label>
+									{{adr.addressCountry}}
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Departement:</label>
+									{{adr.addressState}}
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Ville:</label>
+									{{adr.addressCity}}
+								</div>
+							</td>
+						</tr>
+
+						<tr>
+							<td>
+								<div class="lab">
+									<label>Adresse:</label>
+									{{adr.addressStreet}}
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+
+				<td>
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div style="margin-top: 40px;">
+	<button mat-raised-button color="warn" (click)="onNoClick()">Fermer</button>
+</div>

@@ -1,0 +1,32 @@
+<div style="text-align: center">
+  <label style="background: #263238; padding: 10px; color: #fff;">Envoyer un message</label>
+  <img src="assets/img/logo.png" width="60" height="60">
+  <hr>
+</div>
+
+<form [formGroup]="MsgForm" class="m_form" (ngSubmit)="send()">
+  <table>
+    <tr>
+      <td>
+        <mat-input-container>
+          <input matInput placeholder="email" formControlName="sender" size="20">
+        </mat-input-container>
+
+        <mat-input-container>
+          <input matInput placeholder="sujet" formControlName="subject" size="20">
+        </mat-input-container>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-input-container style="border: solid 1px #aaa; width: 500px;">
+          <textarea type="text" placeholder="message" matInput matTextareaAutosize matAutosizeMinRows="10"
+            formControlName="content"></textarea>
+        </mat-input-container>
+      </td>
+    </tr>
+  </table>
+  <button type="button" mat-raised-button class="btn1" (click)="onNoClick()">Fermer</button>
+  <button type="submit" mat-raised-button class="btn2" [disabled]="!MsgForm.valid">Envoyer</button>
+
+</form>

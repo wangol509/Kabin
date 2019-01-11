@@ -1,0 +1,143 @@
+<form [formGroup]="SmallSForm" class="m_form" (ngSubmit)="validateClient()">
+  <table>
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td class="iheader">Infomations</td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput placeholder="Prénom" formControlName="clientLastname" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput placeholder="Nom" formControlName="clientFirstname" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput placeholder="Fonction/Titre" formControlName="clientFunction" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput placeholder="CIN ou NIF" formControlName="clientCardId" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput readonly min="1910-12-31" max="2008-12-31" [matDatepicker]="picker" placeholder="Date de Naiss"
+                  formControlName="clientBirthday">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker startView="year"></mat-datepicker>
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-select id="clientSex" placeholder="Sex" formControlName="clientSex">
+                <mat-option value="M">M</mat-option>
+                <mat-option value="F">F</mat-option>
+              </mat-select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput type="tel" placeholder="Téléphone" formControlName="clientTels" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput type="email" placeholder="Email" formControlName="clientEmail" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-input-container>
+                <input matInput type="text" placeholder="Détails" formControlName="clientDetails" size="20">
+              </mat-input-container>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        <div style="width: 40px;"> </div>
+      </td>
+      <!--addr -->
+      <td>
+    <tr>
+      <td class="iheader">Adresse</td>
+    </tr>
+    <tr>
+      <td>
+        <mat-input-container>
+          <input matInput placeholder="Pays" formControlName="sAddressCountry" size="20">
+        </mat-input-container>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-input-container>
+          <input matInput placeholder="Département" formControlName="sAddressState" size="20">
+        </mat-input-container>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-input-container>
+          <input matInput placeholder="Ville" formControlName="sAddressCity" size="20">
+        </mat-input-container>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-input-container>
+          <input matInput placeholder="Rue" formControlName="sAddressStreet" size="15">
+        </mat-input-container>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-input-container>
+          <input matInput placeholder="Détails" formControlName="sAddressDetails" size="15">
+        </mat-input-container>
+      </td>
+    </tr>
+    </td>
+    <td>
+      <div style="width: 40px;"> </div>
+    </td>
+
+    <td>
+      <div class="std-img" style="margin-right: 30px;">
+        <p><img src="assets/img/student.jpg" style="border: solid 1px #263238;"></p>
+        <p style="text-align: center;">
+          <label class="btn btn-default btn-file" style="background-color: #263238; color: #fff;">
+            Changer <input type="file" hidden>
+          </label>
+        </p>
+      </div>
+    </td>
+    </tr>
+
+  </table>
+  <div class="row" style="margin-top: 40px;">
+    <button type="submit" mat-raised-button color="warn" [disabled]="!SmallSForm.valid">Valider</button>
+  </div>
+</form>

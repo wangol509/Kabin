@@ -1,0 +1,203 @@
+<div style="background: #eee; padding-left: 10px;">
+  <tr>
+    <td>
+      <i class="material-icons" style="color: #f77; font-size: 50px;">folder_shared</i>
+    </td>
+    <td>
+      &nbsp; NOUVELLE AFFAIRE
+    </td>
+  </tr>
+</div>
+<br />
+<form [formGroup]="AudienceForm" class="m_form" (ngSubmit)="validateAudience()">
+  <table>
+    <tr>
+      <td style="background:#eee; border-right: solid 5px #fff;">
+        <button mat-button disabled>PARTIE POUR</button>
+      </td>
+
+      <td style="background:#eee;">
+        <button mat-button disabled>PARTIE CONTRE</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-form-field>
+            <input type="text" aria-label="Number" formControlName="clientId" matInput [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option.clientId" (click)="setHintValue(option, 'client')">
+                {{option.clientId + ". " + option.clientFirstname + " " + option.clientLastname}}
+              </mat-option>
+            </mat-autocomplete>
+            <span matPrefix class="gry">Client&nbsp;&nbsp;</span>
+            <mat-hint style="color:black; font-size: 15px;">{{cHint}}</mat-hint>
+
+            <span matSuffix style="cursor: pointer;" matTooltip="Veuillez clicker sur le boutton(+) pour ajouter une personne. Si elle existe deja, selectionnez la parmi la liste">
+              &nbsp;
+              <mat-icon color="warn">help</mat-icon>
+            </span>
+          </mat-form-field>
+        </div>
+      </td>
+
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput placeholder="" formControlName="personAdvId" [matAutocomplete]="auto2">
+            <span matPrefix class="gry">Prs Contre&nbsp;&nbsp;</span>
+            <mat-autocomplete #auto2="matAutocomplete">
+              <mat-option *ngFor="let option of filteredPOptions | async" [value]="option.personId" (click)="setHintValue(option, 'padv')">
+                {{option.personId + ". " + option.personFirstname + " " + option.personLastname}}
+              </mat-option>
+            </mat-autocomplete>
+            <span matSuffix (click)="addPerson('person_avd')" style="cursor: pointer;">
+              &nbsp;
+              <mat-icon color="primary">add</mat-icon>
+            </span>
+            <mat-hint style="color:black; font-size: 15px;">{{pHint}}</mat-hint>
+
+            <span matSuffix style="cursor: pointer;" matTooltip="Veuillez clicker sur le boutton(+) pour ajouter une personne. Si elle existe deja, selectionnez la parmi la liste">
+              &nbsp;
+              <mat-icon color="warn">help</mat-icon>
+            </span>
+          </mat-input-container>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput placeholder="" formControlName="audienceQuality" size="20">
+            <span matPrefix class="gry">Qualité&nbsp;&nbsp;</span>
+            <!-- <span matSuffix (click)="addPerson()" style="cursor: pointer;">   
+                &nbsp;          
+                <mat-icon color="primary">add</mat-icon>
+              </span> -->
+          </mat-input-container>
+        </div>
+      </td>
+
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput placeholder="" formControlName="advocatAdvId" [matAutocomplete]="auto3">
+            <span matPrefix class="gry">Avocat Avs&nbsp;&nbsp;</span>
+            <mat-autocomplete #auto3="matAutocomplete">
+              <mat-option *ngFor="let option of filteredLOptions | async" [value]="option.personId" (click)="setHintValue(option, 'ladv')">
+                {{option.personId + ". " + option.personFirstname + " " + option.personLastname}}
+              </mat-option>
+            </mat-autocomplete>
+            <span matSuffix (click)="addPerson('lawer_avd')" style="cursor: pointer;">
+              &nbsp;
+              <mat-icon color="primary">add</mat-icon>
+            </span>
+            <mat-hint style="color:black; font-size: 15px;">{{lHint}}</mat-hint>
+
+            <span matSuffix style="cursor: pointer;" matTooltip="Veuillez clicker sur le boutton(+) pour ajouter une personne. Si elle existe deja, selectionnez la parmi la liste">
+              &nbsp;
+              <mat-icon color="warn">help</mat-icon>
+            </span>
+          </mat-input-container>
+        </div>
+      </td>
+    </tr>
+
+    <tr style="background:#eee;">
+      <td colspan="2">
+        <button mat-button disabled>CONFLIT</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput formControlName="audienceNature" size="20">
+            <span matPrefix class="gry">Nature&nbsp;&nbsp;</span>
+          </mat-input-container>
+        </div>
+      </td>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <textarea matInput placeholder="Objet" formControlName="audienceObject"></textarea>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput placeholder="Juridiction" formControlName="audienceJuridiction" size="20">
+          </mat-input-container>
+        </div>
+      </td>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <textarea matInput placeholder="Juridiction Details" formControlName="audienceJurDetails"></textarea>
+        </div>
+      </td>
+    </tr>
+    <tr style="background:#eee;">
+      <td colspan="2">
+        <button mat-button disabled>DETAILS</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput readonly min="1910-12-31" [matDatepicker]="picker" formControlName="audienceDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker startView="year"></mat-datepicker>
+            <span matPrefix class="gry">Date Entrée&nbsp;&nbsp;</span>
+          </mat-input-container>
+
+        </div>
+      </td>
+      <td>
+
+        <div style="margin: 10px 20px!important;">
+          <mat-input-container>
+            <input matInput formControlName="audienceLawerId" [matAutocomplete]="auto4">
+            <span matPrefix class="gry">Avocat/Honoraire&nbsp;&nbsp;</span>
+            <mat-autocomplete #auto4="matAutocomplete">
+              <mat-option *ngFor="let option of filteredAOptions | async" [value]="option.personId" (click)="setHintValue(option, 'fadv')">
+                {{option.personId + ". " + option.personFirstname + " " + option.personLastname}}
+              </mat-option>
+            </mat-autocomplete>
+            <span matSuffix (click)="addPerson('lawer_for')" style="cursor: pointer;">
+              &nbsp;
+              <mat-icon color="primary">add</mat-icon>
+            </span>
+            <mat-hint style="color:black; font-size: 15px;">{{fHint}}</mat-hint>
+
+            <span matSuffix style="cursor: pointer;" matTooltip="Veuillez clicker sur le boutton(+) pour ajouter une personne. Si elle existe deja, selectionnez la parmi la liste">
+              &nbsp;
+              <mat-icon color="warn">help</mat-icon>
+            </span>
+          </mat-input-container>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <div style="margin: 10px 20px!important;">
+          <textarea matInput placeholder="Commentaires" formControlName="audienceComment"></textarea>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row" style="margin-top: 40px;">
+    <button type="submit" mat-raised-button color="warn" [disabled]="!AudienceForm.valid">Valider</button>
+    &nbsp; &nbsp;
+    <button type="button" mat-raised-button color="warn" (click)="onNoClick()" *ngIf="isUpdate">Fermer</button>
+
+  </div>
+
+</form>

@@ -1,0 +1,77 @@
+<p class="headerf">Ajout de période (TRIMESTRE/SEMESTRE/...)</p>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                Périodes
+            </mat-panel-title>
+            <mat-panel-description>
+                Durées
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-list>
+            <span *ngFor="let p of periodes">
+                <mat-list-item>
+                    <h4 mat-line>{{p.periodeNo}}-{{p.periodeName}}</h4>
+                    <p mat-line class="item1">Durée: [{{p.periodeDstart | date}}, {{p.periodeDend | date}}]
+                        <span class="sp" (click)="deleteObj(p.periodeId)">
+                            <mat-icon>delete</mat-icon>
+                        </span>
+                    </p>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+            </span>
+        </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <mat-icon>add</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+                AJOUTER UNE PERIODE
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <form [formGroup]="PeriodeForm" (ngSubmit)="savePeriode()">
+            <tr>
+                <td class="">
+                    <mat-input-container class="inp">
+                        <input matInput placeholder="Numéro" formControlName="periodeNo" type="number">
+                    </mat-input-container>
+                </td>
+
+                <td>
+                    <mat-input-container class="inp">
+                        <input matInput placeholder="Nom/Desc" formControlName="periodeName" size="20">
+                    </mat-input-container>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <mat-input-container class="inp">
+                        <input matInput [matDatepicker]="picker" placeholder="Date Debut" formControlName="periodeDstart"
+                            size="10">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker startView="year"></mat-datepicker>
+                    </mat-input-container>
+                </td>
+
+                <td>
+                    <mat-input-container class="inp">
+                        <input matInput [matDatepicker]="picker1" placeholder="Date Fin" formControlName="periodeDend"
+                            size="10">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1 startView="year"></mat-datepicker>
+                    </mat-input-container>
+                </td>
+            </tr>
+            <p>
+                <button mat-raised-button color="warn" type="submit" [disabled]="!PeriodeForm.valid"> Ajouter</button>
+            </p>
+        </form>
+
+    </mat-expansion-panel>
+</mat-accordion>

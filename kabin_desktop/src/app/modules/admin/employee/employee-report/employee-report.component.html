@@ -1,0 +1,58 @@
+<mat-sidenav-container class="m-std">
+    <mat-sidenav #sidenav #start mode="side" opened="true" class="std-sidenav">
+
+        <div class="wrap">
+            <div class="">
+                <!-- header -->
+
+                <div style="height: 1px"></div>
+                <mat-grid-list cols="1" rowHeight="50px">
+
+                    <mat-grid-tile [colspan]="1" class="tit m-grid gcel"> Persnl </mat-grid-tile>
+
+                    <!-- home -->
+                    <mat-grid-tile [colspan]="1" class="m-grid gcel" height="30" [routerLink]="['/home', {outlets: {'home': ['emp_home']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/home.png" width="30">
+                            <p class="h8">Acceuil</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!-- mgr -->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid" [routerLink]="['/home', {outlets: {'home': ['emp_mgr']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/user.png" width="30" height="30">
+                            <p class="h8">Gest. Emp.</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!-- pay -->
+                    <mat-grid-tile [colspan]="1" class="curs m-grid" [routerLink]="['/home', {outlets: {'home': ['emp_pay']}}]">
+                        <div class="itm">
+                            <br />
+                            <img src="assets/img/icon/pay.png" width="30" height="30">
+                            <p class="h8">Gest. Paie</p>
+                        </div>
+                    </mat-grid-tile>
+
+                    <!-- report>
+                <mat-grid-tile [colspan]="1" class="curs m-grid current-std">
+                    <img src="assets/img/icon/report.png" width="30" height="30" [routerLink]="['/home', {outlets: {'home': ['emp_report']}}]">
+                </mat-grid-tile-->
+
+                </mat-grid-list>
+            </div>
+
+        </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="std-contain">
+        <router-outlet name="home"></router-outlet>
+
+        <h1>Report Emp</h1>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

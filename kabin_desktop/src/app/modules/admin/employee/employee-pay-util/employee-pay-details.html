@@ -1,0 +1,72 @@
+<div>
+	<label style="background: #263238; padding: 10px; color: #fff;"> Information de paiement</label>
+	<button mat-raised-button color="warn" (click)="printEmp('printemp')">Imprimer</button>
+</div>
+<div id="printemp">
+	<div class="widget">
+		<div style="background: #eee;padding: 15px;text-align: left;">
+			Information sur l'employ&#233; {{obj.employeeFirstname + " " + obj.employeeLastname}}
+		</div>
+		<table style="border-left: solid 1px #eee">
+			<tr>
+				<td class="hdr1">
+					<label>Nom</label>
+				</td>
+				<td class="hdr1">
+					{{obj.employeeFirstname}}
+				</td>
+			</tr>
+			<tr>
+				<td class="hdr1">
+					<label>Pr&#233;nom</label>
+				</td>
+				<td class="hdr1">
+					{{obj.employeeLastname}}
+				</td>
+			</tr>
+			<tr>
+				<td class="hdr1">
+					<label>Fonction</label>
+				</td>
+				<td class="hdr1">
+					{{obj.employeeFunction}}
+				</td>
+			</tr>
+			<tr>
+				<td class="hdr1">
+					<label>Salaire Annuel</label>
+				</td>
+				<td class="hdr1">
+					<strong>{{obj.employeeAnnualPayment}}</strong>HTG
+				</td>
+			</tr>
+
+			<tr>
+				<td class="hdr1">
+					<label>Salaire Mensuel</label>
+				</td>
+				<td class="hdr1">
+					<strong>{{obj.employeeSalaryValue}}</strong>HTG
+				</td>
+			</tr>
+			<tr>
+				<td class="hdr1">
+					<label>Versement Total</label>
+				</td>
+				<td class="hdr1">
+					<strong>{{obj.totalEmployeePayment}}</strong>HTG</td>
+			</tr>
+			<tr>
+				<td class="hdr1">
+					<label>Balance Annuel</label>
+				</td>
+				<td class="hdr1">
+					<strong>{{obj.employeeAnnualPayment - obj.totalEmployeePayment}}</strong>HTG
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div style="margin-top: 20px;">
+	<button mat-raised-button color="warn" (click)="onNoClick()">Fermer</button>
+</div>

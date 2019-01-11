@@ -1,0 +1,74 @@
+<div>
+	<div style="text-align: center; margin-bottom: 80px; background: #263238; padding: 10px; color: #fff;">
+		{{data.param}}
+	</div>
+	<form [formGroup]="EventForm" (ngSubmit)="onClickSave()">
+
+		<table class="test">
+			<tr>
+				<td>
+					<div class="hdr"> Info</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="fcol">
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Title" size="40" value={{event.eventTitle}} formControlName="eventTitle" [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Description" size="40" value={{event.eventDesc}} formControlName="eventDesc"
+							 [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+					<div>
+						<mat-input-container>
+							<input type="datetime-local" matInput placeholder="date start" size="40" value={{event.eventDstart}}
+							 formControlName="eventDstart" [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-input-container>
+							<input type="datetime-local" matInput placeholder="date end" size="40" value={{event.eventDend}} formControlName="eventDend"
+							 [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+				</td>
+				<td colspan="1">
+					<div>
+						<mat-select placeholder="Concerns" multiple value="{{event.eventConcerns}}" formControlName="eventConcerns">
+							<mat-option value="student">Eleves</mat-option>
+							<mat-option value="teacher">Profs</mat-option>
+							<mat-option value="sstatff">SStaff</mat-option>
+							<mat-option value="adm">Adm</mat-option>
+						</mat-select>
+					</div>
+					<br /><br />
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="details" size="20" value={{event.eventDetails}} formControlName="eventDetails"
+							 [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<div>
+			<table>
+				<tr>
+					<td *ngIf="!isDetails">
+						<button mat-raised-button color="warn" [disabled]="!EventForm.valid" type="submit">{{data.param}}</button>
+					</td>
+					<td>
+						<button mat-raised-button color="warn" (click)="onNoClick()" type="button"> Fermer</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>

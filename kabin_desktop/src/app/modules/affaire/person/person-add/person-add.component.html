@@ -1,0 +1,65 @@
+<div class="header-info">Ajout d'Infomations sur {{_title}}</div>
+
+<form [formGroup]="SmallSForm" class="m_form" (ngSubmit)="validatePerson()">
+  <table>
+    <tr>
+      <td>
+        <div>
+          <mat-input-container>
+            <input matInput placeholder="Prénom" formControlName="personLastname" size="20">
+          </mat-input-container>
+        </div>
+        <div>
+          <mat-input-container>
+            <input matInput placeholder="Nom" formControlName="personFirstname" size="20">
+          </mat-input-container>
+        </div>
+        <div>
+          <mat-input-container>
+            <input matInput placeholder="CIN ou NIF" formControlName="personCardId" size="20">
+          </mat-input-container>
+        </div>
+        <!-- <div>
+							<mat-input-container>
+                  <input matInput readonly min="1910-12-31" max="2008-12-31" [matDatepicker]="picker" placeholder="Date de Naiss" formControlName="personBirthday">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker startView="year"></mat-datepicker>
+              </mat-input-container>							
+            </div> -->
+        <div>
+          <mat-select id="personSex" placeholder="Sex" formControlName="personSex">
+            <mat-option value="M">M</mat-option>
+            <mat-option value="F">F</mat-option>
+          </mat-select>
+        </div>
+      </td>
+      <td>
+        <div style="width: 100px;">
+
+        </div>
+      </td>
+      <td>
+        <div>
+          <mat-input-container>
+            <input matInput type="tel" placeholder="Téléphone" formControlName="personTels" size="20">
+          </mat-input-container>
+        </div>
+        <div>
+          <mat-input-container>
+            <input matInput type="email" placeholder="Email" formControlName="personEmail" size="20">
+          </mat-input-container>
+        </div>
+        <div>
+          <mat-input-container>
+            <input matInput type="text" placeholder="Détails" formControlName="personDetails" size="20">
+          </mat-input-container>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <div class="row" style="margin-top: 40px;">
+    <button type="submit" mat-raised-button color="warn" [disabled]="!SmallSForm.valid">Valider</button>
+    &nbsp;&nbsp;
+    <button type="button" mat-raised-button color="warn" (click)="closeWnd()">Fermer</button>
+  </div>
+</form>

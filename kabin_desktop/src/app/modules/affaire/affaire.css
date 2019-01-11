@@ -1,0 +1,149 @@
+  
+.m-grid {
+    background-color: #c9e9f1;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 12px;
+    border-bottom: solid 1px #fff;
+}
+
+form{
+    background: #fff;
+}
+
+
+.nbstd{
+    text-align: center;
+    margin: 35px 0px;
+}
+  
+.circle{
+    border-radius: 20%;  
+    width: 200px;
+    height: 200px;
+    background: rgba(219, 124, 111, 0.2);
+    border: 3px solid red;
+}
+
+.marg{
+    margin: 0px 30px;
+}
+
+.widget{
+	margin: 20px 10px;
+}
+
+.formp{
+	margin-top: 80px;
+}
+
+ .hdr{
+	background: #eee;
+	padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-right: solid 2px #fff;
+}
+
+.hdr1{
+	padding: 5px 20px;
+    text-align: left;
+}
+  
+.iheader{
+    background: #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.test{
+    margin-left: 20px;
+}
+
+.std{
+    height: 100%;
+    margin-top: 20px;
+}
+
+.m-std {
+    position: absolute;
+    top: 3px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+  
+.std-sidenav {
+    display: flex;
+    align-items: top;
+    justify-content: top;
+    width: 100px;
+    background: #ffffff;
+}
+  
+.std-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+  
+.menu{
+    display: block;
+}
+  
+.std-contain{
+    align-items: top;
+    justify-content: top;
+    height: 100%;
+}
+  
+.wrap {
+    width: 100%;
+    background-color: #fff;
+}
+  
+.tit{
+   background-color: #263238;
+   text-transform: uppercase;
+   color: #fff;
+   font-size: 12px;    
+}
+  
+.curs{
+    cursor: pointer;
+    background-color: #c9e9f1;      
+}
+    
+.mat-table {
+   overflow: auto;
+}
+  
+  
+table td, table td * {
+    vertical-align: top;
+    position: relative;
+}
+  
+.header-info{
+    padding: 5px 40px;
+    background: #263238;
+    margin: 20px 10px;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.current-std{
+   background: #afc8ce;
+}
+
+.wlc{
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #263238;
+    font-size: 20px;
+    padding: 10px 20px;
+  } 

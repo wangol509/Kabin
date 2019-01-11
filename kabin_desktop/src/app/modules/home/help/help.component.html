@@ -1,0 +1,146 @@
+<div class="header-info">Documentation/Aide</div>
+<br />
+
+<mat-vertical-stepper #stepper>
+
+    <!--Aide Institution-->
+    <mat-step>
+        <ng-template matStepLabel>Introduction</ng-template>
+        <div class="row">
+            <div class="col-8">
+                <p>
+                    <img src="assets/help/help3.png" width="500">
+                </p>
+            </div>
+
+            <div class="col-4">
+                <p>
+                    <img src="assets/help/help33.png" width="200">
+                </p>
+            </div>
+
+        </div>
+
+        <div>
+            <p>
+                LAE PRO est un système distribue pour la gestion d'établissement scholaire. Il comprend une application
+                mobile et une application bureau.
+                Les élèves et les professeurs peuvent interagir entre eux et l'administration pour échange
+                d'information et pour effectuer des évaluations.
+                L'utilisation du système est simple mais son installation demande des manipulations techniques.
+                Il est recommandé de faire appel a un spécialiste pour l'installation et la configuration du système.
+            </p>
+        </div>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Paramètre d'Initialisation</ng-template>
+        <p>Pour commencer l'utilisation de l'application, vous devez saisir d'abord les données statiques, c'est-à-dire
+            les données qui sont susceptibles de rester inchangées.
+            Vous aurez à enregistrer:</p>
+        <ul>
+            <li>
+                L’institution et les periodes de fonctionnement (trimestres, semestres, ...)
+            </li>
+            <li>
+                Les classes
+            </li>
+            <li>
+                Mode de paiement par classe
+            </li>
+            <li>
+                Liste de cours par classe
+            </li>
+            <li>
+                Horaire par classe
+            </li>
+            <li>
+                Les sanctions et les penalités
+            </li>
+        </ul>
+
+        <p>
+            Apres avoir saisi ces données, alors vous êtes capable d’enregistrer un élève, un professeur, etc. Il est
+            obligatoire de saisir ces données avant de commencer l’utilisation de l’application.
+        </p>
+
+        <p>
+            Vous pouvez passer alors à la gestion des élèves, des professeurs, des employés et des utilisateurs dans le
+            menu en haut et à gauche.
+        </p>
+
+        <p>
+            <img src="assets/help/help1.png">
+        </p>
+        <div>
+            <button mat-button matStepperNext>Next</button>
+            <button mat-button matStepperPrevious>Back</button>
+        </div>
+        <hr>
+    </mat-step>
+
+    <!--Aide Institution-->
+    <mat-step>
+        <ng-template matStepLabel>Institution</ng-template>
+        ....
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <!--Aide Classe-->
+    <mat-step>
+        <ng-template matStepLabel>Classes</ng-template>
+        ....
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <!--Aide Professeur-->
+    <mat-step>
+        <ng-template matStepLabel>Professeurs</ng-template>
+        ....
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <!--Aide Eleve-->
+    <mat-step>
+        <ng-template matStepLabel>Elèves</ng-template>
+        ....
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <!--Aide Employe-->
+    <mat-step>
+        <ng-template matStepLabel>Employés</ng-template>
+        ....
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+
+    <!--Aide Utilisateur-->
+    <mat-step>
+        <ng-template matStepLabel>Utilisateurs</ng-template>
+        ....
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Return</button>
+        </div>
+    </mat-step>
+</mat-vertical-stepper>
+<br /><br /><br />
+<button mat-button color="warn" (click)="onNoClick()">Fermer</button>

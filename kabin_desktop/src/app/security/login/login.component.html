@@ -1,0 +1,39 @@
+<div class="app1 login">
+	<mat-grid-list cols="1" rowHeight="100%">
+		<mat-grid-tile *ngIf="loadEnd">
+			<div>
+				<form [formGroup]="LOGIN_FORM" (ngSubmit)="validateUser()" class="app1">
+					<div class="logo">
+						<img src="assets/logo.png" width="200" height="200">
+					</div>
+					<br />
+					<div class="login-form">
+						<div>
+							<mat-form-field>
+								<input matInput type="text" placeholder="Username" formControlName="userUsername" size="10">
+								<mat-error>Utilisateur Invalide</mat-error>
+							</mat-form-field>
+						</div>
+						<div>
+							<mat-form-field>
+								<input matInput placeholder="Password" formControlName="userPassword" type="password" size="20">
+							</mat-form-field>
+						</div>
+						<button type="submit" mat-raised-button color="warn" [disabled]="!LOGIN_FORM.valid">Go</button>
+						<span style="color: red" *ngIf="isValid">Invalid User</span>
+					</div>
+				</form>
+			</div>
+		</mat-grid-tile>
+		<mat-grid-tile *ngIf="!loadEnd">
+			<div style="width: 200px;">
+				Chargement ...
+				<mat-progress-bar mode={{mode}} color="warn"></mat-progress-bar>
+			</div>
+		</mat-grid-tile>
+	</mat-grid-list>
+
+	<div class="foo">
+		&copy;KABIN 2018
+	</div>
+</div>

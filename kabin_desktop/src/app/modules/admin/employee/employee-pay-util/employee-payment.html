@@ -1,0 +1,27 @@
+<div>
+	<div style="text-align: center; magin-bottom: 80px; background: #263238; padding: 10px; color: #fff;">
+		<h2>Institution {{inst_name}}</h2>
+		Paiment pour l'employé {{data.employeeLastname + " " + data.employeeFirstname}}
+	</div>
+	<div class="formp">
+		<form [formGroup]="PaymentForm" (ngSubmit)="onClickSave()">
+			<div>
+				<mat-input-container>
+					<input matInput placeholder="Montant(HTG)" size="20" formControlName="paymentEmployeeValue">
+				</mat-input-container>
+			</div>
+			<div>
+				<table>
+					<tr>
+						<td>
+							<button mat-raised-button color="warn" [disabled]="!PaymentForm.valid" type="submit"> Sauvegarder </button>
+						</td>
+						<td>
+							<button mat-raised-button color="warn" (click)="onNoClick()" type="button"> Fermer</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</div>

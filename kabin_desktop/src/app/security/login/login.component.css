@@ -1,0 +1,29 @@
+
+
+.login{
+  border-bottom: solid 1px #87d6e6;
+  height: 100%;
+}
+
+.login-form{
+	background-color: #fff;
+	padding: 20px 50px;
+  margin: auto auto;
+  color: #222;
+}
+
+.logo{
+	text-align: center;
+  padding-top: -230px;
+  margin-bottom: 6px;
+}
+
+.foo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #ccc;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+

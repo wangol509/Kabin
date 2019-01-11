@@ -1,0 +1,23 @@
+
+  .mat-header-cell, 
+  .mat-cell {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 30px;
+  }
+
+  .mat-column-Code {
+    flex: 0 0 75px;
+    color: brown;
+  }
+
+  .mat-column-Client {
+    flex: 0 0 160px;
+  }
+
+
+  .mat-column-Details {
+    flex: 0 0 130px;
+  }

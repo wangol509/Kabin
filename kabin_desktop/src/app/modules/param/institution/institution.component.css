@@ -1,0 +1,48 @@
+.titl{
+	font-size: 40px;
+	text-align: center;
+}
+
+.headerf{
+  padding: 5px 10px;
+  background: #cadce6;
+  margin: 20px 0;
+  text-align: left;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+table td, table td * {
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.iheader{
+  background: #ddd;
+  padding: 5px 10px ;
+  font-size: 12px;
+  text-transform: uppercase;
+  border-bottom: solid 4px #fff;
+}
+
+.item1{
+  width: 100%;
+  text-align: left;
+}
+.sp{
+  width: 100%;
+  margin-left: 100px;
+  text-align: right;
+  color: rgb(216, 44, 44);
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.inp{
+  margin-right: 10px;
+  width: 120px;
+}

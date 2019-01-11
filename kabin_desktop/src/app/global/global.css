@@ -1,0 +1,15 @@
+
+.alert{
+	color: red;
+}
+
+.defaultc{
+	text-align: center;
+	margin: 20px auto;
+}
+
+.card1{
+	margin: 20px;
+    padding: 20px;
+	width: 150px;
+}

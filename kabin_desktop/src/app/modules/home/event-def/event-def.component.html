@@ -1,0 +1,67 @@
+<div style="width: 200px; margin-left: 50px;">
+	<mat-select placeholder="ANNONCES" class="anc">
+		<mat-option value="all" (click)="updateEvents('all')">Toutes</mat-option>
+		<!-- 		
+		<mat-option value="teacher" (click)="updateEvents('teacher')">Profs</mat-option>
+		<mat-option value="student" (click)="updateEvents('student')">Eleves</mat-option>
+		<mat-option value="sstaff" (click)="updateEvents('sstaff')">Personnel</mat-option>
+		<mat-option value="administration" (click)="updateEvents('administration')">Administration</mat-option> -->
+	</mat-select>
+</div>
+<mat-grid-list cols="2" rowHeight="3:2">
+	<mat-grid-tile *ngFor="let c of events" class="">
+		<mat-card class="evt">
+			<mat-card-title>
+				<mat-icon class="micon">information</mat-icon> Annonces: {{c.eventTitle}}
+			</mat-card-title>
+			<mat-card-content>
+				<div>
+					<p>Date Debut: {{convertStrDate(c.eventDstart)}}, Date Fin: {{convertStrDate(c.eventDend)}}</p>
+					<p class="cardevt">{{c.eventDesc}}</p>
+					<p style="color: #999;">Creer par {{user.userUsername}} le {{convertStrDate(c.dateCreated)}}</p>
+				</div>
+				<div>
+					<button mat-icon-button [matMenuTriggerFor]="menu">
+						<mat-icon>more_horiz</mat-icon>
+					</button>
+					<mat-menu #menu="matMenu">
+						<button mat-menu-item (click)="openDialog(c, 'Update', '600px', '500px')">
+							<mat-icon>update</mat-icon>
+							<span>MODIFIER</span>
+						</button>
+						<button mat-menu-item (click)="openDialog(c, 'Delete', '500px', '500px')">
+							<mat-icon>delete</mat-icon>
+							<span>SUPPRIMER</span>
+						</button>
+						<button mat-menu-item (click)="openDialog(c, 'Details', '600px', '500px')">
+							<mat-icon>details</mat-icon>
+							<span>DETAILS</span>
+						</button>
+					</mat-menu>
+				</div>
+			</mat-card-content>
+		</mat-card>
+		<br />
+		<br />
+	</mat-grid-tile>
+
+
+	<mat-grid-tile>
+		<mat-card>
+			<mat-card-title>
+				Nouvelle Annonce
+			</mat-card-title>
+
+			<mat-card-subtitle>
+				Ajouter une nouvelle annonce
+			</mat-card-subtitle>
+
+			<mat-card-content>
+				<div class="card1">
+					<button mat-raised-button color="warn" (click)="openDialog(defaultEvent, 'Add', '500px', '500px')"> Ajout</button>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</mat-grid-tile>
+
+</mat-grid-list>

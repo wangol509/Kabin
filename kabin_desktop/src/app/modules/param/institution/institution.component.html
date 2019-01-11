@@ -1,0 +1,91 @@
+<mat-card class="cdr" *ngIf="isFound">
+	<mat-card-title class="titl">
+		{{institution.institutionName}}
+	</mat-card-title>
+
+	<mat-card-content class="titl">
+		<div>
+			<h3>{{institution.institutionDetails}}</h3>
+		</div>
+		<div>
+			<button mat-raised-button color="warn" (click)="showUpdate()" [disabled]="false"> Modifier</button>
+		</div>
+	</mat-card-content>
+</mat-card>
+<div *ngIf="!isFound" class="row">
+	<div class="col-7">
+		<p class="headerf">Enregistrer une Institution</p>
+		<form [formGroup]="InstForm" (ngSubmit)="saveInst()">
+			<div class="row">
+				<div class="col-4">
+					<p class="iheader">Institution</p>
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Nom" size="20" formControlName="institutionName">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Details" size="20" formControlName="institutionDetails">
+						</mat-input-container>
+					</div>
+				</div>
+
+				<div class="col-4">
+					<p class="iheader">Adresse</p>
+					<mat-input-container>
+						<input matInput placeholder="Pays" formControlName="sAddressCountry" size="20">
+					</mat-input-container>
+
+					<mat-input-container>
+						<input matInput placeholder="Département" formControlName="sAddressState" size="20">
+					</mat-input-container>
+
+					<mat-input-container>
+						<input matInput placeholder="Ville" formControlName="sAddressCity" size="20">
+					</mat-input-container>
+
+					<mat-input-container>
+						<input matInput placeholder="Rue" formControlName="sAddressStreet" size="15">
+					</mat-input-container>
+
+					<mat-input-container>
+						<input matInput placeholder="Détails" formControlName="sAddressDetails" size="15">
+					</mat-input-container>
+				</div>
+
+				<div class="col-4">
+					<p class="iheader">ANNEE-ACADEMIQUE</p>
+					<div>
+						<mat-input-container>
+							<input matInput [matDatepicker]="picker" placeholder="Date Debut" formControlName="schoolBeginDate">
+							<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+							<mat-datepicker #picker startView="year"></mat-datepicker>
+						</mat-input-container>
+					</div>
+					<div>
+						<mat-input-container>
+							<input matInput [matDatepicker]="picker1" placeholder="Date Fin" formControlName="schoolEndDate">
+							<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+							<mat-datepicker #picker1 startView="year"></mat-datepicker>
+						</mat-input-container>
+					</div>
+				</div>
+			</div>
+			<div>
+				<table>
+					<tr>
+						<td *ngIf="isFound">
+							<button mat-raised-button color="warn" type="button" [disabled]="!InstForm.valid"> Modifier</button>
+						</td>
+						<td *ngIf="!isFound">
+							<button mat-raised-button color="warn" type="submit" [disabled]="!InstForm.valid"> Ajouter </button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<br /><br />
+		</form>
+	</div>
+</div>

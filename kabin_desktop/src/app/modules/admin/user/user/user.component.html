@@ -1,0 +1,52 @@
+<div>
+	<mat-grid-list cols="3">
+		<mat-grid-tile *ngFor="let c of users">
+			<mat-card>
+				<mat-card-title>
+					{{c.userFirstname}} {{c.userLastname}}
+				</mat-card-title>
+
+				<mat-card-content style="text-align: center">
+
+					<img src="assets/img/user.png">
+					<h3>{{c.userUsername}}</h3>
+
+					<div class="btns">
+						<mat-grid-list cols="3">
+							<mat-grid-tile>
+								<button mat-raised-button class="btn1" (click)="openDialog(c, 'Update', '550px', '600px')"> Modifier</button>
+							</mat-grid-tile>
+							<mat-grid-tile>
+								<button mat-raised-button class="btn2" (click)="openDialog(c, 'Delete', '550px', '600px')"> Supprimer</button>
+							</mat-grid-tile>
+
+							<mat-grid-tile>
+								<button mat-raised-button class="btn3" (click)="openDialog(c, 'Details', '550px', '600px')"> Details</button>
+							</mat-grid-tile>
+						</mat-grid-list>
+					</div>
+				</mat-card-content>
+			</mat-card>
+		</mat-grid-tile>
+
+
+		<mat-grid-tile>
+			<mat-card>
+				<mat-card-title>
+					Nouveau Utilisateur
+				</mat-card-title>
+
+				<mat-card-subtitle>
+					Niveau
+				</mat-card-subtitle>
+
+				<mat-card-content>
+					<div class="card1">
+						<button mat-raised-button color="warn" (click)="openDialog(eUser, 'Add', '550px', '600px')"> Ajout</button>
+					</div>
+				</mat-card-content>
+			</mat-card>
+		</mat-grid-tile>
+
+	</mat-grid-list>
+</div>

@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+  <div style="margin-left: 10px">
+    <mat-form-field floatPlaceholder="never">
+      <input matInput #filter placeholder="Recherche">
+    </mat-form-field>
+
+    <button mat-button color="warn" (click)="fetchData()">
+      <i class="material-icons">refresh</i>
+    </button>
+  </div>
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container matColumnDef="Code">
+      <mat-header-cell *matHeaderCellDef> Code </mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row[0].audienceId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-icon style="font-size: 15px;">gavel</mat-icon> {{row[0].audienceDetails}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Affaire">
+      <mat-header-cell *matHeaderCellDef> Affaire </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-icon style="font-size: 15px;">folder</mat-icon> {{row[1].affaireObject}}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Date">
+      <mat-header-cell *matHeaderCellDef>Date </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row[0].audienceDate}} </mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="Details">
+      <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> <button mat-button color="warn" (click)="openDetailsDialog(row)">Détails</button></mat-cell>
+    </ng-container>
+
+    <ng-container cdkColumnDef="Update">
+      <mat-header-cell *cdkHeaderCellDef> </mat-header-cell>
+      <mat-cell *cdkCellDef="let row"> <button mat-button color="warn" (click)="openUpdateDialog(row)">Update</button></mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

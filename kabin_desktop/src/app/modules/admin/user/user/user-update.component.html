@@ -1,0 +1,84 @@
+<div>
+	<div style="text-align: center; magin-bottom: 80px; background: #263238; padding: 10px; color: #fff;">
+		Information Utilisateur
+	</div>
+	<form [formGroup]="UserForm" (ngSubmit)="onClickSave()">
+
+		<table class="test">
+			<tr>
+				<td>
+					<div>
+						<img src="assets/img/user.png">
+					</div>
+					<br />
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Nom" size="20" value={{data.userFirstname}} formControlName="userFirstname"
+							 [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Prenom" size="20" value={{data.userLastname}} formControlName="userLastname"
+							 [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+					<div>
+						<mat-select id="userSex" placeholder="Sex" formControlName="userSex">
+							<mat-option value="M">M</mat-option>
+							<mat-option value="F">F</mat-option>
+						</mat-select>
+					</div>
+				</td>
+
+				<td>
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Tel" size="10" value={{data.userPhone}} formControlName="userPhone" [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Email" size="20" value={{data.userEmail}} formControlName="userEmail" [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Utilisateur" size="20" value={{data.userUsername}} formControlName="userUsername"
+							 [readonly]="isDelete">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-input-container>
+							<input matInput placeholder="Mot de passe" size="10" value={{data.userPassword}} formControlName="userPassword"
+							 [readonly]="isDelete" type="password">
+						</mat-input-container>
+					</div>
+
+					<div>
+						<mat-select id="userPrivilege" placeholder="Privilege" formControlName="userPrivilege">
+							<mat-option value="2">Utilisateur Normal</mat-option>
+							<mat-option value="1">Administrateur</mat-option>
+						</mat-select>
+					</div>
+
+				</td>
+			</tr>
+		</table>
+		<div>
+			<table>
+				<tr>
+					<td *ngIf="!isDetails">
+						<button mat-raised-button color="warn" [disabled]="!UserForm.valid" type="submit">{{data.param}}</button>
+					</td>
+					<td>
+						<button mat-raised-button color="warn" (click)="onNoClick()" type="button"> Fermer</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>

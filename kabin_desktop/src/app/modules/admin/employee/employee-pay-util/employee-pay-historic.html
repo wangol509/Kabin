@@ -1,0 +1,46 @@
+<div>
+	<label style="background: #263238; padding: 10px; color: #fff;"> Historique de paiement</label>
+	<button mat-raised-button color="warn" (click)="printEmp('section_id')">Imprimer</button>
+</div>
+
+<div class="widget" id="section_id">
+	<div></div>
+	<div style="background: #eee;padding: 5px 5px;text-transform: uppercase;text-align: center;border-right: solid 2px #fff;">
+		Historique de paiement pour l'employ&#233;: {{data.employeeFirstname}} {{data.employeeLastname}}
+	</div>
+	<table>
+		<!-- header, i have to put css style here to make printing works-->
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+		</tr>
+
+
+		<tr>
+			<td style="background: #eee;padding: 3px 15px;text-transform: uppercase;text-align: center;border-right: solid 2px #fff;">
+				Somme Recue:
+			</td>
+			<td style="background: #eee;padding: 3px 15px;text-transform: uppercase;text-align: center;border-right: solid 2px #fff;">
+				Date:
+			</td>
+			<td style="background: #eee;padding: 3px 15px;text-transform: uppercase;text-align: center;border-right: solid 2px #fff;">
+				Effectu&#233; par:
+			</td>
+		</tr>
+		<tr *ngFor="let p of stdPay">
+			<td style="padding: 8px 20px;text-align: center;">
+				{{p.paymentEmployeeValue}} HTG
+			</td>
+			<td style="padding: 8px 2px;text-align: center;">
+				{{p.dateCreated}}
+			</td>
+			<td style="padding: 8px 20px;text-align: center;">
+				{{p.createdBy}}
+			</td>
+		</tr>
+	</table>
+</div>
+<div style="margin-top: 20px;">
+	<button mat-raised-button color="warn" (click)="onNoClick()">Fermer</button>
+</div>

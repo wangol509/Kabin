@@ -1,0 +1,120 @@
+<div id="print-section">
+    <div style="background: #eee; padding-left: 10px;">
+        <tr>
+            <td>
+                <i class="material-icons" style="color: #f77; font-size: 50px;">folder_shared</i>
+            </td>
+            <td>
+                <span style="text-transform: uppercase;">&nbsp; DETAILS AFFAIRE - {{iname}}</span>
+            </td>
+        </tr>
+    </div>
+
+    <div>
+        <br />
+    </div>
+    <!--Audience/Person-->
+
+    <table *ngIf="aff != null">
+        <tr>
+            <td style="background:#eee; border-right: solid 5px #fff;" colspan="2">
+                <button mat-button disabled>AFFAIRE</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Objet&nbsp;&nbsp;</span>
+                    {{aff.audienceObject }}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Nature&nbsp;&nbsp;</span>
+                    {{aff.audienceNature}}
+                </div>
+            </td>
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Qualité&nbsp;&nbsp;</span>
+                    {{aff.audienceQuality}}
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Juridiction&nbsp;&nbsp;</span>
+                    {{aff.audienceJuridiction}}
+                </div>
+            </td>
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Date&nbsp;&nbsp;</span>
+                    {{aff.audienceDate}}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Commentaire&nbsp;&nbsp;</span>
+                    {{aff.audienceComment}}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="background:#eee; border-right: solid 5px #fff;">
+                <button mat-button disabled>PARTIE POUR</button>
+            </td>
+
+            <td style="background:#eee;">
+                <button mat-button disabled>PARTIE CONTRE</button>
+            </td>
+        </tr>
+
+        <tr *ngIf="client != null">
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Client:&nbsp;&nbsp;</span>
+                    {{client.clientFirstname + " " + client.clientLastname}}
+
+                </div>
+            </td>
+
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Personne&nbsp;&nbsp;</span>
+                    {{person_adv.personFirstname + " " + person_adv.personLastname}}
+                </div>
+            </td>
+        </tr>
+
+        <tr *ngIf="lawer_adv != null && lawer_for != null">
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Avocat:&nbsp;&nbsp;</span>
+                    {{lawer_for.personFirstname + " " + lawer_for.personLastname}}
+
+                </div>
+            </td>
+
+            <td>
+                <div style="margin: 10px 20px!important;">
+                    <span matPrefix class="gry">Avocat:&nbsp;&nbsp;</span>
+                    {{lawer_adv.personFirstname + " " + lawer_adv.personLastname}}
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <button type="submit" mat-raised-button color="warn" (click)="onNoClick()">Fermer</button>
+    &nbsp;&nbsp;
+    <button type="submit" mat-raised-button color="warn" (click)="printTch()">Imprimer</button>
+</div>
