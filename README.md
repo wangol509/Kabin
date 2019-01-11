@@ -29,7 +29,7 @@ Le logiciel peut être aussi déployé sur un seul ordinateur.
 [Voir les captures d'ecran](https://github.com/wangol509/Kabin/tree/master/screenshot)
 
 ![Deploiment](/images/deploy.png?raw=true)
-Il est possible d&#39;utiliser le projet dans un réseau local, mais les codes sources du serveur et la base de données ne sont pas dans le dépôt. Si vous contez l&#39;utiliser immédiatement, veuillez me contacter par email (en bas), en attendant que je fais les mises à jour.
+Il est possible d&#39;utiliser le projet dans un réseau local, mais les codes sources du serveur et la base de données ne sont pas dans le dépôt. Si vous contez l&#39;utiliser immédiatement, veuillez me contacter par email (en bas), en attendant que je faisse les mises à jour.
 
 # 2. Installation
 
