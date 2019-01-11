@@ -14,11 +14,12 @@ Le système (le logiciel) est construit pour être déployé sur une architectur
 
 Le logiciel peut déployer sur un ou plusieurs ordinateurs.
 
-![Alt text](/images/presentation.png?raw=true)
+[Voir les captures d'ecran](https://github.com/wangol509/Kabin/tree/master/screenshot)
+
+![Deploiment](/images/deploy.png?raw=true)
 
 Il est possible d&#39;utiliser le projet dans un réseau local, mais les codes sources du serveur et la base de données ne sont pas dans le dépôt. Si vous espérez l&#39;utiliser immédiatement, veuillez me contacter par email (en bas), en attendant que je fais les mises à jour.
 
-#
 # 2. Installation
 
 Pour commencer à code ou à utiliser le logiciel vous devez configurer votre environnement avec les outils suivants:
@@ -33,7 +34,8 @@ Dans le répertoire racine, le dessier _kabin\_desktop_est l&#39;application cli
 
 La structure globale du projet est représentée par la figure suivante:
 
-![Alt text](/images/deploy.png?raw=true)
+
+![Presentation](/images/presentation.png?raw=true)
 
 #
 # 3. Documentation
@@ -49,6 +51,8 @@ Pour ceux qui veulent faire des dons, voici mes comptes Bitcoin et Ethereum:
 
 - Bitcoin: 17tPeK7gHjS114R3pGqS7UB6979N9NTbVa
 - Ethereum : 0x928e7e4d5dF5DB0253845aD3F0C4F75BcfEeAC22
+
+Vous pouvez verifier les  balances [Bitcoin](https://www.blockchain.com/btc/address/17tPeK7gHjS114R3pGqS7UB6979N9NTbVa) et [Ethereum](https://enjinx.io/eth/address/0x928e7e4d5dF5DB0253845aD3F0C4F75BcfEeAC22/transactions)
 
 Pour l&#39;instant je n&#39;ai d&#39;autre moyen de recevoir des paiements, mais si vos désires vous tentent, … me contacter !
 
