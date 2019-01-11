@@ -22,7 +22,7 @@ Kabin est un logiciel de gestion de cabinets d&#39;avocats et départements juri
   <img src="/screenshot/kabin-54-29.png" width="400">
 </p>
 
-Le système (le logiciel) est construit pour être déployé sur une architecture répartie, une partie du système est destinée aux administrateurs (une application de bureau) et une autre partie (Une application mobile) est destinée à des groupes d&#39;utilisateurs qui seront éventuellement les clients du cabinet. L&#39;application mobile est utilisé pour permettre aux clients de suivre l&#39;évolution de leurs dossiers ou des affaires que les concernent.
+Le système (le logiciel) est construit pour être déployé sur une architecture répartie, une partie du système est destinée aux administrateurs (une application de bureau) et une autre partie (Une application mobile) est destinée à des groupes d&#39;utilisateurs qui seront éventuellement les clients du cabinet. L&#39;application mobile est utilisé pour permettre aux clients de suivre l&#39;évolution de leurs dossiers ou des affaires qui les concernent.
 
 Le logiciel peut être aussi déployé sur un seul ordinateur.
 
