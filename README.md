@@ -1,7 +1,7 @@
 #
 # 1. Présentation
 
-Kabin est un logiciel de gestion de cabinets d&#39;avocats et départements juridiques adapté au système judiciaire Haïtien. Le logiciel est composé de plusieurs modules : Gestion des:
+Kabin est un logiciel de gestion de cabinets d&#39;avocats et départements juridiques adaptés au système judiciaire Haïtien. Le logiciel est composé de plusieurs modules :
 
 - Utilisateurs
 - Affaires,
@@ -10,7 +10,7 @@ Kabin est un logiciel de gestion de cabinets d&#39;avocats et départements juri
 - Paiement
 - Clients
 
-Le système (le logiciel) est construit pour être déployé sur une architecture répartie, une        partie du système est destinée aux administrateurs (une application de bureau) et une autre partie (Une application mobile) est destinée à des groupes d&#39;utilisateurs qui seront éventuellement les clients du cabinet. L&#39;application mobile est utilisé pour permettre aux clients de suivre l&#39;évolution de leurs dossiers ou des affaires que les concernent.
+Le système (le logiciel) est construit pour être déployé sur une architecture répartie, une partie du système est destinée aux administrateurs (une application de bureau) et une autre partie (Une application mobile) est destinée à des groupes d&#39;utilisateurs qui seront éventuellement les clients du cabinet. L&#39;application mobile est utilisé pour permettre aux clients de suivre l&#39;évolution de leurs dossiers ou des affaires que les concernent.
 
 Le logiciel peut déployer sur un ou plusieurs ordinateurs.
 
@@ -57,3 +57,5 @@ Vous pouvez verifier les  balances [Bitcoin](https://www.blockchain.com/btc/addr
 Pour l&#39;instant je n&#39;ai d&#39;autre moyen de recevoir des paiements, mais si vos désires vous tentent, … me contacter !
 
 L&#39;utilisation du projet est gratuit, mais si vous voulez le commercialiser vous devez me contacter.
+
+Contatct: wangolo509@gmail.com
