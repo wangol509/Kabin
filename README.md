@@ -62,8 +62,8 @@ Ce projet est cours de construction, vous pouvez contribuer à l&#39;améliorer 
 
 Pour ceux qui veulent faire des dons, voici mes comptes Bitcoin et Ethereum:
 
-- Bitcoin: 16MYTw7FN7zok6UTWteiv9KEdAhuLdkhdL
-- Ethereum : 0x928e7e4d5dF5DB0253845aD3F0C4F75BcfEeAC22
+- Bitcoin: <span style="color:blue">16MYTw7FN7zok6UTWteiv9KEdAhuLdkhdL</span>
+- Ethereum : <span style="color:blue">0x928e7e4d5dF5DB0253845aD3F0C4F75BcfEeAC22</span>
 
 Vous pouvez verifier les  balances [Bitcoin](https://www.blockchain.com/btc/address/16MYTw7FN7zok6UTWteiv9KEdAhuLdkhdL) et [Ethereum](https://enjinx.io/eth/address/0x928e7e4d5dF5DB0253845aD3F0C4F75BcfEeAC22/transactions)
 
